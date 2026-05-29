@@ -1,11 +1,11 @@
 interface IButton {
-  loginF: () => void
+  onClick: () => void
 }
 
-export const Botao = ({loginF}: IButton) => {
+export const Botao = ({onClick}: IButton) => {
   return(
     <div>
-      <button onClick={loginF} style={{backgroundColor: 'purple', color: 'black', 
+      <button onClick={onClick} style={{backgroundColor: 'purple', color: 'black', 
         width: '100%', 
         padding: '25px', 
         borderRadius: '10px',

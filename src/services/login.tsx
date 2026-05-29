@@ -1,3 +1,10 @@
-export const login = (): void => {
-    alert('Seja muito bem vindo(a) ao Dio Bank!')
+import { api } from "../api"
+
+export const login = async (email: string): Promise<void> => {
+    const data: any = await api
+
+    if(email !== data.email) {
+        return alert('Email inválido!')
+    }
+    alert(`Seja muito bem vindo(a) ao Dio Bank, ${email}!`)
 }
