@@ -3,22 +3,24 @@ import {
 } from '@chakra-ui/react'
 import { Layout } from './components/Layout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Conta from './pages/Conta'
-import ContaInfo from './pages/ContaInfo';
+import { AppContextProvider } from './components/AppContext';
+import MainRoutes from './routes'
+import { createLocalStorage, getAllLocalStorage } from './services/storage';
+
 
 function App() {
+
+  !getAllLocalStorage() && createLocalStorage()
+
   return (
     <BrowserRouter>
-    <ChakraProvider>
-      <Layout>
-        <Routes>
-         <Route path ='/' element={ <Home />} />
-         <Route path='/conta/:id' element={ <Conta />}/>
-         <Route path='/infoconta' element={<ContaInfo/>} />
-        </Routes>
-      </Layout>
-    </ChakraProvider>
+      <AppContextProvider>
+        <ChakraProvider>
+          <Layout>
+            <MainRoutes />
+          </Layout>
+        </ChakraProvider>
+      </AppContextProvider>
     </BrowserRouter>
   );
 }

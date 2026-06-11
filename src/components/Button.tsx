@@ -1,5 +1,8 @@
+import { MouseEventHandler } from "react"
+
+
 interface IButton {
-  onClick: () => void
+  onClick: MouseEventHandler
 }
 
 export const Botao = ({onClick}: IButton) => {
