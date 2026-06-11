@@ -2,7 +2,7 @@ import {
   ChakraProvider,
 } from '@chakra-ui/react'
 import { Layout } from './components/Layout';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 import { AppContextProvider } from './components/AppContext';
 import MainRoutes from './routes'
 import { createLocalStorage, getAllLocalStorage } from './services/storage';

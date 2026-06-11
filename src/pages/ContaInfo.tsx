@@ -2,7 +2,7 @@ import { Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useEffect, useState, useContext} from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { AppContext } from "../components/AppContext"
 import CardInfo from "../components/CardInfo"
 import { api } from "../api"
@@ -11,7 +11,6 @@ import { Card } from "../components/Card"
 
 const ContaInfo = () => {
     const [userData, setUserData] = useState<null | UserData>()
-    const { id } = useParams()
     const navigate = useNavigate()
 
     const { isLoggedIn } =  useContext(AppContext)
